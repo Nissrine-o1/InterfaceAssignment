@@ -1,8 +1,12 @@
-// Define an interface named IQuittable
-// Interfaces can be implemented by classes to ensure they provide specific methods
-public interface IQuittable
+// IQuittable.cs
+using System;
+
+namespace InterfaceAssignment
 {
-    // Define a method signature for Quit
-    // Classes that implement this interface must define this method
-    void Quit();
+    // This interface defines a contract for any class that wants to be "quittable"
+    public interface IQuittable
+    {
+        // Any class implementing this interface must have a Quit method
+        void Quit();
+    }
 }
