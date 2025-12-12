@@ -1,27 +1,27 @@
+// Program.cs
 using System;
 
-class Program
+namespace InterfaceAssignment
 {
-    static void Main(string[] args)
+    class Program
     {
-        // Create an Employee object and assign properties
-        Employee employee = new Employee()
+        static void Main(string[] args)
         {
-            FirstName = "John",
-            LastName = "Doe",
-            Id = 101
-        };
+            // Create an Employee object
+            Employee employee = new Employee() 
+            { 
+                FirstName = "John", 
+                LastName = "Doe" 
+            };
 
-        // Polymorphism: Declare an object of type IQuittable
-        // Since Employee implements IQuittable, it can be assigned to this variable
-        IQuittable quittableEmployee = employee;
+            // Polymorphism: we can use an interface type to reference the object
+            IQuittable quittableEmployee = employee;
 
-        // Call the Quit method on the interface object
-        // The runtime knows to execute the Employee's Quit method
-        quittableEmployee.Quit();
+            // Call the Quit method through the interface
+            quittableEmployee.Quit();
 
-        // Pause the console so we can see the output
-        Console.WriteLine("Press any key to exit...");
-        Console.ReadKey();
+            // Keep the console window open
+            Console.ReadLine();
+        }
     }
 }
